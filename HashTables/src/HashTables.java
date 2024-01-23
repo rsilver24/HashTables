@@ -1,14 +1,17 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 public class HashTables {
 
     // Instance Data
 
     private int HashTableLength;
+    private int[] array;
 
     // Constructors
 
     public HashTables(int capacity){
-
+        array = new int[capacity];
+        HashTableLength = capacity;
     }
 
     // Methods
