@@ -5,19 +5,21 @@ public class HashTables {
     // Instance Data
 
     private int HashTableLength;
-    private int[] array;
+    private String[] array;
 
     // Constructors
 
     public HashTables(int capacity){
-        array = new int[capacity];
+        array = new String[capacity];
         HashTableLength = capacity;
     }
 
     // Methods
 
     public boolean put(String key, String value){
-        
+        int hashValue = hashCode(key);
+        array[hashValue] = value;
+        return true;
     }
 
     public String get(String key){
