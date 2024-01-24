@@ -23,7 +23,8 @@ public class HashTables {
     }
 
     public String get(String key){
-
+        int hashValue = hashCode(key);
+        return array[hashValue];
     }
 
     private int hashCode(String key){
