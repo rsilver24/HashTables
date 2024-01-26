@@ -4,6 +4,7 @@ public class HashTablesTestDriver {
     public static void main(String[] args) {
 
         HashTables table = new HashTables(15);
+        HashTables table2 = new HashTables(15);
 
         /** Test to see if hashCode as a whole works.
          *
@@ -35,6 +36,45 @@ public class HashTablesTestDriver {
         System.out.println(table.get("but like... I don't want to go >:("));
         System.out.println(table.get("157382"));
         System.out.println(table.get("!@#$%^&*()"));
-        System.out.println((table.get("A")));
+        System.out.println(table.get("A"));
+
+        // ------------------------------------
+
+        System.out.println();
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println();
+
+        // ------------------------------------
+
+        /** Below is a new test, where I made my own unique hashCode function, and then am trying it out below and testing whether
+         * it is generally better or worse that what is seen in the tests above.
+         *
+         * The algorithm I used follows:
+         * ( CurrentCharacterNumberRep * NextCharacterNumberRep ^ CurrentCharacterNumberRep ) + (...)
+         *
+         * Unlike the previous algorithm however, this one does NOT account for in a key is just one character, so I have an
+         * if statement that then caused this algorithm to occur instead for the calculation:
+         * ( CurrentCharacterNumberRep * 31 ^ CurrentCharacterNumberRep )
+         *
+         * I used the same keys and values as the previous demonstration, just to keep things simple.
+         *
+         * This demonstration using my own code ADDITIONALLY ALSO REQUIRES a minimum array length of 15. To be honest... I am
+         * not too sure why this is. Perhaps % 15 is just a really nice number when calculating things, or there is some other
+         * obscure reason. I am not too sure.
+         */
+
+        table2.put("Hey!", "Hi!");
+        table2.put("How are you?", "I'm doing alright");
+        table2.put("but like... I don't want to go >:(", "but you HAVE to go!");
+        table2.put("157382", "wow those sure are numbers");
+        table2.put("!@#$%^&*()", "i don't really understand but yeah!");
+        table2.put("A", "B");
+
+        System.out.println(table2.get("Hey!"));
+        System.out.println(table2.get("How are you?"));
+        System.out.println(table2.get("but like... I don't want to go >:("));
+        System.out.println(table2.get("157382"));
+        System.out.println(table2.get("!@#$%^&*()"));
+        System.out.println(table2.get("A"));
     }
 }
