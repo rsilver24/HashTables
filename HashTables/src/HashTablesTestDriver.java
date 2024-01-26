@@ -1,3 +1,5 @@
+// Roan Silver      Created: January 24th 2023        Last Edits: January 26th, 2023
+// Collaborator: https://www.tutorialspoint.com/java/java_string_hashcode.htm
 public class HashTablesTestDriver {
     public static void main(String[] args) {
 

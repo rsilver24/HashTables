@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+// Roan Silver      Created: January 23rd 2023        Last Edits: January 26th, 2023
+// Collaborator: https://www.tutorialspoint.com/java/java_string_hashcode.htm
 public class HashTables {
 
     // Instance Data
@@ -28,6 +28,7 @@ public class HashTables {
     }
 
     // s[0]*31^(n - 1) + s[1]*31^(n - 2) + ... + s[n - 1]
+    // From: tutorialspoint.com
     private int hashCode(String key){
         int hashTotal = 0;
         int hashLoop;
