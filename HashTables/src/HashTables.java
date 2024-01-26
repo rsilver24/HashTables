@@ -41,4 +41,25 @@ public class HashTables {
             hashTotal += hashLoop;
         } return hashTotal % array.length;
     }
+
+    // My own PERSONAL adaptation of a HashCode Function
+    private int customHashCode(String key){
+        int hashTotal = 0;
+        int hashLoop;
+        int loopNumber = 0;
+        if (key.length() == 1){
+            char c = key.charAt(0);
+            int k = c;
+            hashTotal = c * 31 ^ c;
+        } else{
+            for (int i = 0; i < key.length() - 1; i++) {
+                loopNumber++;
+                char c = key.charAt(i);
+                char c2 = key.charAt(i + 1);
+                int k = c;
+                hashLoop = c * c2 ^ c;
+                hashTotal += hashLoop;
+            }
+        } return hashTotal % array.length;
+    }
 }
